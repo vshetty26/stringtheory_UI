@@ -56,7 +56,6 @@ const ProductGrid = () => {
         {
             title: 'Pearl Brief Necklace',
             subtitle: 'THE PEARL STORY',
-            price: '$2000 - $4500',
             image: '/images/product-necklace.png',
             bgColor: '#f5f0e8'
         },
