@@ -1,0 +1,126 @@
+.collection-showcase {
+    padding: 120px 0;
+    background-color: white;
+    width: 100%;
+    overflow: hidden;
+}
+
+.showcase-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.showcase-header {
+    text-align: center;
+    margin-bottom: 60px;
+    opacity: 0;
+}
+
+.showcase-header.visible {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 30px;
+}
+
+.showcase-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 500px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.showcase-item.visible {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.showcase-item.large {
+    grid-row: span 2;
+    height: 100%;
+}
+
+.showcase-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.showcase-item:hover img {
+    transform: scale(1.1);
+}
+
+.showcase-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.showcase-item:hover .showcase-overlay {
+    transform: translateY(0);
+}
+
+.showcase-overlay h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.showcase-overlay .btn-primary {
+    background-color: white;
+    color: var(--text-dark);
+}
+
+.showcase-overlay .btn-primary:hover {
+    background-color: var(--accent-gold);
+    color: white;
+}
+
+@media (max-width: 968px) {
+    .showcase-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .showcase-item {
+        height: 400px;
+    }
+
+    .showcase-item.large {
+        grid-row: span 1;
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .collection-showcase {
+        padding: 80px 0;
+    }
+
+    .showcase-container {
+        padding: 0 20px;
+    }
+
+    .showcase-item {
+        height: 350px;
+    }
+
+    .showcase-item.large {
+        height: 400px;
+    }
+
+    .showcase-overlay h3 {
+        font-size: 24px;
+    }
+}
