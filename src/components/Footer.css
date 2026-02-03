@@ -201,3 +201,13 @@
         gap: 15px;
     }
 }
+.contact-details li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-details strong {
+    color: white;
+    font-weight: 600;
+}
