@@ -40,27 +40,19 @@ const Features = () => {
                     <div className="features-list">
                         <div className="feature-item">
                             <span className="feature-icon">✓</span>
-                            <span className="feature-text">Indirect Cut Quality</span>
+                            <span className="feature-text">Necklaces - Timeless Elegance</span>
                         </div>
                         <div className="feature-item">
                             <span className="feature-icon">✓</span>
-                            <span className="feature-text">Natural Color Grade</span>
+                            <span className="feature-text">Bracelets - Grace Your Wrist</span>
                         </div>
                         <div className="feature-item">
                             <span className="feature-icon">✓</span>
-                            <span className="feature-text">High Clarity Rating</span>
+                            <span className="feature-text">Chokers - Bold Statements</span>
                         </div>
                         <div className="feature-item">
                             <span className="feature-icon">✓</span>
-                            <span className="feature-text">Precise Carat Weight</span>
-                        </div>
-                        <div className="feature-item">
-                            <span className="feature-icon">✓</span>
-                            <span className="feature-text">Elegant Setting Style</span>
-                        </div>
-                        <div className="feature-item">
-                            <span className="feature-icon">✓</span>
-                            <span className="feature-text">Durable Metal Choice</span>
+                            <span className="feature-text">Earrings - Perfect Finishing Touch</span>
                         </div>
                     </div>
 

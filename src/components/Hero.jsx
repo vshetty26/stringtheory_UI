@@ -1,8 +1,46 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Hero.css';
 
 const Hero = () => {
     const heroRef = useRef(null);
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const totalSlides = 3;
+
+    const slides = [
+        {
+            subtitle: "TIMELESS BEAUTY",
+            title: "ELEGANCE IN EVERY\nCHAIN, BEAUTY\nUNCHAINED",
+            description: "Discover our exquisite collection of handcrafted jewelry.\nWhere timeless elegance meets modern sophistication.",
+            mainImage: "/images/model-saree.jpg",
+            sidebarImages: [
+                { src: "/images/earrings.jpg", alt: "Colorful Beaded Hoop Earrings" },
+                { src: "/images/necklace.jpg", alt: "Multi-Strand Beaded Necklace" },
+                { src: "/images/bracelet.jpg", alt: "Bohemian Wrap Bracelet" }
+            ]
+        },
+        {
+            subtitle: "HANDCRAFTED PERFECTION",
+            title: "ARTISTRY MEETS\nELEGANCE IN\nEVERY PIECE",
+            description: "Each piece tells a story of craftsmanship and dedication.\nExperience jewelry that celebrates your unique style.",
+            mainImage: "/images/features-model.png",
+            sidebarImages: [
+                { src: "/images/bracelet-new.jpg", alt: "Beaded Bracelets" },
+                { src: "/images/choker.jpg", alt: "Pearl Choker" },
+                { src: "/images/earrings.jpg", alt: "Statement Earrings" }
+            ]
+        },
+        {
+            subtitle: "EXCLUSIVE COLLECTION",
+            title: "DISCOVER YOUR\nSIGNATURE\nSTYLE",
+            description: "From classic to contemporary, find pieces that resonate.\nElevate your look with our curated jewelry collection.",
+            mainImage: "/images/hero-choker-model.jpg",
+            sidebarImages: [
+                { src: "/images/necklace.jpg", alt: "Elegant Necklaces" },
+                { src: "/images/choker.jpg", alt: "Designer Chokers" },
+                { src: "/images/bracelet-new.jpg", alt: "Luxury Bracelets" }
+            ]
+        }
+    ];
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -22,22 +60,46 @@ const Hero = () => {
         return () => observer.disconnect();
     }, []);
 
+    const handleKnowMore = () => {
+        const productSection = document.querySelector('.product-grid');
+        if (productSection) {
+            productSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
+    const handlePrevSlide = () => {
+        setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+    };
+
+    const handleNextSlide = () => {
+        setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+    };
+
+    const currentSlideData = slides[currentSlide];
+
     return (
         <section className="hero" id="home" ref={heroRef}>
             <div className="hero-container">
                 <div className="hero-content">
-                    <div className="hero-text animate-on-scroll">
-                        <span className="hero-subtitle">TIMELESS BEAUTY</span>
+                    <div className="hero-text animate-on-scroll" key={currentSlide}>
+                        <span className="hero-subtitle">{currentSlideData.subtitle}</span>
                         <h1 className="hero-title">
-                            ELEGANCE IN EVERY<br />
-                            CHAIN, BEAUTY<br />
-                            UNCHAINED
+                            {currentSlideData.title.split('\n').map((line, index) => (
+                                <React.Fragment key={index}>
+                                    {line}
+                                    {index < currentSlideData.title.split('\n').length - 1 && <br />}
+                                </React.Fragment>
+                            ))}
                         </h1>
                         <p className="hero-description">
-                            Discover our exquisite collection of handcrafted jewelry.<br />
-                            Where timeless elegance meets modern sophistication.
+                            {currentSlideData.description.split('\n').map((line, index) => (
+                                <React.Fragment key={index}>
+                                    {line}
+                                    {index < currentSlideData.description.split('\n').length - 1 && <br />}
+                                </React.Fragment>
+                            ))}
                         </p>
-                        <button className="btn-primary">
+                        <button className="btn-primary" onClick={handleKnowMore}>
                             KNOW MORE
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -46,21 +108,13 @@ const Hero = () => {
                         </button>
                     </div>
 
-                    <div className="hero-pagination animate-on-scroll">
-                        <button className="pagination-btn active">
-                            <span className="pagination-line"></span>
-                        </button>
-                        <span className="pagination-text">1 / 3</span>
-                        <button className="pagination-btn">
-                            <span className="pagination-line"></span>
-                        </button>
-                    </div>
+
                 </div>
 
-                <div className="hero-image animate-on-scroll">
+                <div className="hero-image animate-on-scroll" key={`image-${currentSlide}`}>
                     <div className="image-wrapper">
                         <img
-                            src="/images/model-saree.jpg"
+                            src={currentSlideData.mainImage}
                             alt="Elegant Jewelry"
                         />
                         <div className="floating-badge">
@@ -72,15 +126,15 @@ const Hero = () => {
 
                 <div className="hero-sidebar">
                     <div className="sidebar-images">
-                        <div className="sidebar-image animate-on-scroll" style={{ animationDelay: '0.2s' }}>
-                            <img src="/images/product-bracelet.png" alt="Product 1" />
-                        </div>
-                        <div className="sidebar-image animate-on-scroll" style={{ animationDelay: '0.3s' }}>
-                            <img src="/images/product-bracelet.png" alt="Product 2" />
-                        </div>
-                        <div className="sidebar-image animate-on-scroll" style={{ animationDelay: '0.4s' }}>
-                            <img src="/images/product-bracelet.png" alt="Product 3" />
-                        </div>
+                        {currentSlideData.sidebarImages.map((image, index) => (
+                            <div
+                                key={`sidebar-${currentSlide}-${index}`}
+                                className="sidebar-image animate-on-scroll"
+                                style={{ animationDelay: `${0.2 + index * 0.1}s` }}
+                            >
+                                <img src={image.src} alt={image.alt} />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

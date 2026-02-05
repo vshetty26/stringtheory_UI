@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ProductGrid.css';
 
 const ProductGrid = () => {
     const gridRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -25,48 +27,41 @@ const ProductGrid = () => {
     const products = [
         {
             title: 'Grace Your Wrist',
-            subtitle: 'CLASSIC CHARM',
-            description: 'Elegant gold bracelets crafted with precision and care.',
-            image: '/images/product-bracelet.png',
-            bgColor: '#d4b896'
+            subtitle: 'BRACELETS',
+            description: 'Elegant handcrafted bracelets that add charm to every gesture.',
+            image: '/images/bracelet-new.jpg?v=2',
+            bgColor: '#d4b896',
+            route: '/bracelet'
         },
         {
-            title: 'Every Gem Tells A Story',
-            subtitle: 'JEWELS AS UNIQUE AS YOU',
-            description: 'Discover the perfect piece that speaks to your soul.',
-            image: '/images/product-necklace.png',
-            bgColor: '#f5f0e8'
+            title: 'Adorn Your Neckline',
+            subtitle: 'NECKLACES',
+            description: 'Timeless necklaces that tell your unique story.',
+            image: '/images/necklace.jpg?v=2',
+            bgColor: '#f5f0e8',
+            route: '/necklace'
         },
         {
-            title: 'Timeless Designs',
-            subtitle: 'CIRCLE OF ELEGANCE',
-            description: 'Handcrafted pieces that transcend time and trends.',
-            image: '/images/product-bracelet.png',
-            bgColor: '#1a1a1a',
-            isDark: true
+            title: 'Bold & Beautiful',
+            subtitle: 'CHOKERS',
+            description: 'Statement chokers designed to accentuate your style.',
+            image: '/images/choker.jpg?v=2',
+            bgColor: '#e8dfd0',
+            route: '/choker'
         },
         {
-            title: 'Dazzling Designs',
-            subtitle: 'SPARKLE IN EVERY CHAIN',
-            description: 'Bold designs that make a statement.',
-            image: '/images/product-bracelet.png',
-            bgColor: '#2d2d2d',
-            isDark: true
-        },
-        {
-            title: 'Pearl Brief Necklace',
-            subtitle: 'THE PEARL STORY',
-            image: '/images/product-necklace.png',
-            bgColor: '#f5f0e8'
-        },
-        {
-            title: 'Vintage Brooch',
-            subtitle: 'ILLUMINATE YOUR ELEGANCE',
-            description: 'Timeless vintage pieces with modern appeal.',
-            image: '/images/product-brooch.png',
-            bgColor: '#c9a961'
+            title: 'Perfect Finishing Touch',
+            subtitle: 'EARRINGS',
+            description: 'Dazzling earrings that frame your face with elegance.',
+            image: '/images/earrings.jpg?v=2',
+            bgColor: '#c9a961',
+            route: '/earring'
         }
     ];
+
+    const handleNavigate = (route) => {
+        navigate(route);
+    };
 
     return (
         <section className="product-grid" ref={gridRef}>
@@ -79,6 +74,7 @@ const ProductGrid = () => {
                             backgroundColor: product.bgColor,
                             animationDelay: `${index * 0.1}s`
                         }}
+                        onClick={() => handleNavigate(product.route)}
                     >
 
                         <div className="product-content">
@@ -90,7 +86,13 @@ const ProductGrid = () => {
                             {product.price && (
                                 <p className="product-price">{product.price}</p>
                             )}
-                            <button className={`btn-primary ${product.isDark ? 'light' : ''}`}>
+                            <button
+                                className={`btn-primary ${product.isDark ? 'light' : ''}`}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleNavigate(product.route);
+                                }}
+                            >
                                 SHOP NOW
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <line x1="5" y1="12" x2="19" y2="12"></line>

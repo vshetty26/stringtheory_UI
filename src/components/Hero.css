@@ -24,7 +24,8 @@
 }
 
 .hero-text {
-    opacity: 0;
+    opacity: 1;
+    transition: opacity 0.5s ease;
 }
 
 .hero-text.visible {
@@ -99,7 +100,8 @@
 
 .hero-image {
     position: relative;
-    opacity: 0;
+    opacity: 1;
+    transition: opacity 0.5s ease;
 }
 
 .hero-image.visible {
@@ -124,6 +126,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: opacity 0.5s ease;
 }
 
 .floating-badge {
