@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import '../components/CategoryGrid.css';
 import '../components/Hero.css';
 
 const CategoryPage = ({ category, title, description, items, heroImage }) => {
     const gridRef = useRef(null);
     const { pathname } = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -92,8 +93,10 @@ const CategoryPage = ({ category, title, description, items, heroImage }) => {
                             className={`category-card animate-on-scroll ${product.isDark ? 'dark' : ''}`}
                             style={{
                                 backgroundColor: product.bgColor,
-                                animationDelay: `${index * 0.1}s`
+                                animationDelay: `${index * 0.1}s`,
+                                cursor: 'pointer'
                             }}
+                            onClick={() => navigate(`/product/${product.id}`)}
                         >
                             <div className="category-image">
                                 <img src={product.image} alt={product.title} />
@@ -112,10 +115,22 @@ const CategoryPage = ({ category, title, description, items, heroImage }) => {
                                     </div>
                                 )}
                                 <div className="category-actions">
-                                    <button className="btn-add-to-cart">
+                                    <button
+                                        className="btn-add-to-cart"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            alert(`Added ${product.title} to cart!`);
+                                        }}
+                                    >
                                         ADD TO CART
                                     </button>
-                                    <button className={`btn-icon ${product.isDark ? 'light' : ''}`}>
+                                    <button
+                                        className={`btn-icon ${product.isDark ? 'light' : ''}`}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            navigate(`/product/${product.id}`);
+                                        }}
+                                    >
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                             <line x1="5" y1="12" x2="19" y2="12"></line>
                                             <polyline points="12 5 19 12 12 19"></polyline>
