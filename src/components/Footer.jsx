@@ -12,8 +12,8 @@ const Footer = () => {
                             <span className="logo-text">The String Theory</span>
                         </div>
                         <p className="footer-description">
-                            Crafting timeless elegance with every piece.
-                            Your trusted partner in luxury jewelry since 1990.
+                            Connecting you to the world through the art of jewelry.
+                            Handcrafted with love, designed for your unique journey.
                         </p>
                         <div className="social-links">
                             <a href="https://www.facebook.com/deeceeaccessories/" className="social-link" target="_blank" rel="noopener noreferrer">

@@ -26,33 +26,33 @@ const Features = () => {
         <section className="features" ref={featuresRef}>
             <div className="features-container">
                 <div className="features-content animate-on-scroll">
-                    <span className="section-subtitle">CRAFTED WITH LOVE</span>
+                    <span className="section-subtitle">THE THEORY OF CONNECTION</span>
                     <h2 className="section-title">
-                        Commitment: Forever, In Every<br />
-                        Sparkling Jewel
+                        Everything is Connected<br />
+                        By A Single Thread
                     </h2>
                     <p className="features-description">
-                        Each piece in our collection is meticulously crafted with the finest materials
-                        and attention to detail. We believe in creating jewelry that tells your unique story
-                        and becomes a cherished part of your journey.
+                        At The String Theory, we believe in the invisible bonds that connect us all.
+                        Our handcrafted jewelry is designed to be a tangible representation of these connections,
+                        weaving together style, sentiment, and the unique story of you.
                     </p>
 
                     <div className="features-list">
                         <div className="feature-item">
-                            <span className="feature-icon">✓</span>
-                            <span className="feature-text">Necklaces - Timeless Elegance</span>
+                            <span className="feature-icon">◇</span>
+                            <span className="feature-text">Necklaces - Binding Elegant Stories</span>
                         </div>
                         <div className="feature-item">
-                            <span className="feature-icon">✓</span>
-                            <span className="feature-text">Bracelets - Grace Your Wrist</span>
+                            <span className="feature-icon">◇</span>
+                            <span className="feature-text">Bracelets - Circles of Connection</span>
                         </div>
                         <div className="feature-item">
-                            <span className="feature-icon">✓</span>
-                            <span className="feature-text">Chokers - Bold Statements</span>
+                            <span className="feature-icon">◇</span>
+                            <span className="feature-text">Chokers - Bold Expressions</span>
                         </div>
                         <div className="feature-item">
-                            <span className="feature-icon">✓</span>
-                            <span className="feature-text">Earrings - Perfect Finishing Touch</span>
+                            <span className="feature-icon">◇</span>
+                            <span className="feature-text">Earrings - Whispers of Style</span>
                         </div>
                     </div>
 

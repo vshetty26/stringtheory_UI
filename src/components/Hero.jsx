@@ -8,36 +8,36 @@ const Hero = () => {
 
     const slides = [
         {
-            subtitle: "TIMELESS BEAUTY",
-            title: "ELEGANCE IN EVERY\nCHAIN, BEAUTY\nUNCHAINED",
-            description: "Discover our exquisite collection of handcrafted jewelry.\nWhere timeless elegance meets modern sophistication.",
+            subtitle: "THE STRING THEORY",
+            title: "WEAVING STORIES\nINTO EVERY\nSTRAND",
+            description: "More than just jewelry—each piece is a thread in the tapestry of your life.\nHandcrafted to connect, adorn, and inspire.",
             mainImage: "/images/model-saree.jpg",
             sidebarImages: [
-                { src: "/images/earrings.jpg", alt: "Colorful Beaded Hoop Earrings" },
-                { src: "/images/necklace.jpg", alt: "Multi-Strand Beaded Necklace" },
-                { src: "/images/bracelet.jpg", alt: "Bohemian Wrap Bracelet" }
+                { src: "/images/earrings.jpg", alt: "Artisan Earnings" },
+                { src: "/images/necklace.jpg", alt: "Statement Necklace" },
+                { src: "/images/bracelet.jpg", alt: "Handwoven Bracelet" }
             ]
         },
         {
-            subtitle: "HANDCRAFTED PERFECTION",
-            title: "ARTISTRY MEETS\nELEGANCE IN\nEVERY PIECE",
-            description: "Each piece tells a story of craftsmanship and dedication.\nExperience jewelry that celebrates your unique style.",
+            subtitle: "HARMONY IN DESIGN",
+            title: "WHERE ELEGANCE\nMEETS\nCONNECTION",
+            description: "Discover the perfect balance of modern aesthetics and timeless craft.\nAccessories that resonate with your unique frequency.",
             mainImage: "/images/features-model.png",
             sidebarImages: [
-                { src: "/images/bracelet-new.jpg", alt: "Beaded Bracelets" },
-                { src: "/images/choker.jpg", alt: "Pearl Choker" },
-                { src: "/images/earrings.jpg", alt: "Statement Earrings" }
+                { src: "/images/bracelet-new.jpg", alt: "Modern Bracelets" },
+                { src: "/images/choker.jpg", alt: "Elegant Choker" },
+                { src: "/images/earrings.jpg", alt: "Classic Earrings" }
             ]
         },
         {
-            subtitle: "EXCLUSIVE COLLECTION",
-            title: "DISCOVER YOUR\nSIGNATURE\nSTYLE",
-            description: "From classic to contemporary, find pieces that resonate.\nElevate your look with our curated jewelry collection.",
+            subtitle: "CURATED FOR YOU",
+            title: "YOUR STYLE,\nYOUR\nNARRATIVE",
+            description: "Express your individuality with our exclusive collections.\nLet your accessories speak the language of who you are.",
             mainImage: "/images/hero-choker-model.jpg",
             sidebarImages: [
-                { src: "/images/necklace.jpg", alt: "Elegant Necklaces" },
-                { src: "/images/choker.jpg", alt: "Designer Chokers" },
-                { src: "/images/bracelet-new.jpg", alt: "Luxury Bracelets" }
+                { src: "/images/necklace.jpg", alt: "Bold Necklaces" },
+                { src: "/images/choker.jpg", alt: "Chic Chokers" },
+                { src: "/images/bracelet-new.jpg", alt: "Delicate Bracelets" }
             ]
         }
     ];
