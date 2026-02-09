@@ -25,7 +25,7 @@
     justify-content: space-between;
 }
 
-.navbar-logo {
+/* .navbar-logo {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -39,12 +39,24 @@
 
 .navbar-logo:hover {
     transform: scale(1.05);
+} */
+
+.logo-image {
+    height: 40px;
+    /* Adjust height to fit navbar */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-.logo-icon {
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+/* .logo-icon {
     font-size: 20px;
     color: var(--accent-gold);
-}
+} */
 
 .navbar-menu {
     display: flex;

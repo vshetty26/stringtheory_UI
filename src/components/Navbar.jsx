@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -17,9 +18,8 @@ const Navbar = () => {
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="navbar-container">
-                <Link to="/" className="navbar-logo" style={{ textDecoration: 'none' }}>
-                    <span className="logo-icon">◇</span>
-                    <span className="logo-text">The String Theory</span>
+                <Link to="/" className="navbar-logo">
+                    <img src={logo} alt="The String Theory" className="logo-image" />
                 </Link>
 
                 <ul className={`navbar-menu ${mobileMenuOpen ? 'active' : ''}`}>
