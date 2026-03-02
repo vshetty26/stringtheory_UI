@@ -1,4 +1,4 @@
-# SWARNA - Luxury Jewelry E-Commerce Website
+String theory
 
 A beautiful React clone of a luxury jewelry e-commerce website featuring elegant animations, premium design, and responsive layouts.
 
